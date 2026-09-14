@@ -1,0 +1,166 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --background: #fdebd4;
+    --corDestaque-fundo: #0313a1;
+    --corDestaque-fundo-clara: #ffae00;
+
+    
+    --destaque: #79ffe2;
+    --textos: #1E293B;
+
+
+    --sucesso: #10B981;      
+    --alerta: #F59E0B;        
+    --erro: #EF4444;          
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+    min-height: 100vh;
+    background-color: var(--backgroud);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 8vh 8vw;
+}
+
+form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1%;
+    margin-bottom: 3vh;
+}
+
+h1{
+    color: var(--corDestaque-fundo-clara);
+    margin-bottom: 2vh;
+}
+
+input,select,button{
+    grid-column: span 2;
+
+    border-radius: 8px;
+    width: 100%;
+    padding: 1vh 1vw; 
+    margin: 1vh 0vw;
+
+}
+
+button{
+    width: fit-content;
+   
+}
+
+table{
+    width: 100%;
+}
+
+th,td{
+    border: 1px solid black;
+    text-align: center;
+}
+
+th{
+    background-color: var(--corDestaque-fundo);
+    color: var(--detaque);
+    padding: 1.2%;
+}
+
+td{
+    background-color: var(--corDestaque-fundo-clara);
+    color: var(--textos);
+}
+
+.acao{
+    width: 12vw;
+}
+
+.acao button{
+    padding: 2%;
+   
+}
+
+/* ----------------------------------------login------------------------------------------------- */
+
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    width: 40vw;
+    height: 35vh;
+    background-color: var(--corDestaque-fundo);
+
+    padding: 3%;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+/* ------------------------------------barra lateral ------------------------------------ */
+
+.oculto{
+    display: none !important;
+}
+
+#sidebar{
+    width: 12.6vw;
+    height: 100vh;
+    background-color: var(--corDestaque-fundo);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 5vh 0vw;
+}
+
+#sidebar ul{
+    width: 100%;
+}
+
+#sidebar li{
+    list-style: none;
+    width: 100%;
+    
+}
+
+#sidebar a, #sidebarFooter{
+    display: block;
+    width: 100%;
+    padding: 2vh 0vw;
+    text-decoration: none;
+    text-align: center;
+    color: var(--destaque);
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
