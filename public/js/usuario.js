@@ -88,7 +88,7 @@ async function carregarSelectAtucao(){
         }
 
         selectAtuacao.innerHTML = `<option value="0">Selecione um tipo de usuario!</option>` + atuacoes.map((atuacao) => `
-            <option value="${atuacao.id_tipo_usuario}">${atuacao.nome}</option>
+            <option value="${atuacao.id_atuacao}">${atuacao.nome}</option>
         `).join('')
         
 
@@ -129,7 +129,7 @@ async function carregarTabelaUsuarios(){
                 <td>${usuario.tipo}</td>
                 <td>${usuario.atuacao}</td>
                 <td class="acao">
-                    <button onclick="editarUsuario(${usuario.id_usuario},'${usuario.email}',${usuario.id_tipo_usuario},${usuario.id_atuacao})">Editar</button>
+                    <button onclick="editarUsuario(${usuario.id_usuario},'${usuario.nome}','${usuario.email}',${usuario.id_tipo_usuario},${usuario.id_atuacao})">Editar</button>
                     <button onclick="excluirUsuario(${usuario.id_usuario})">X</button>
                 </td>
             </tr>
@@ -183,6 +183,8 @@ form.addEventListener('submit', async (e) => {
 })
 
 function editarUsuario(id,nome,email,idTipo,idAtuacao){
+
+    console.log(selectAtuacao)
 
     editando = id
 
