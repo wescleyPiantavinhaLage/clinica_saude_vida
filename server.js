@@ -1,8 +1,8 @@
+import 'dotenv/config';
 import express from 'express'
 import path from 'path'
 import app from './src/app.js'
 import { fileURLToPath } from 'url'
-import 'dotenv/config';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -16,9 +16,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'view' , 'l
 app.get('/consulta', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'view' , 'consulta.html')))
 app.get('/atendimento', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'view' , 'atendimento.html')))
 app.get('/dashboard', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'view' , 'dashboard.html')))
-
-
-
+app.get('/usuario', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'view' , 'usuario.html')))
 
 
 const PORT = process.env.PORT
