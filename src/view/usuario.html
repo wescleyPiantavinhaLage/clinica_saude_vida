@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usuario clinica saúde e vida</title>
+    <link rel="stylesheet" href="\css\style.css">
+</head>
+<body>
+    <div id="sidebarBlank"></div>
+    <main>
+    
+        <h1>Cadastro de usuario</h1>
+        <form id="formUsuario">
+            <input type="text" name="email" id="usuarioNome"  placeholder="nome do usuario" required>
+            <input type="email" name="email" id="usuarioEmail"  placeholder="usuario@gmail.com" required>
+
+            <input type="password" id="usuarioSenha" placeholder="********">
+
+            <select name="tipo" id="usuarioTipo" required>
+            </select>
+            <select name="atuacao" id="usuarioAtuacao" required>
+                
+            </select>
+
+            <button type="submit">Entrar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Tipo</th>
+                    <th>Atuação</th>
+                    <th class="acao">
+                        Ações
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tbodyUsuario">
+                
+
+            </tbody>
+        </table>
+
+    
+    </main>
+
+    <script src="\js\barraNavegacao.js"></script>
+    <script src="\js\usuario.js"></script>
+    
+</body>
+</html>

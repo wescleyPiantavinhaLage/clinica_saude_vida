@@ -16,47 +16,47 @@
 -- nome varchar(45) not null unique
 -- );
 
--- create table if not exists tb_usuarios(
--- id_usuario integer primary key auto_increment not null unique,
--- nome varchar(45) not null ,
--- email varchar(100) not null unique,
--- senha varchar(60) not null,
--- id_tipo_usuario integer,
--- foreign key (id_tipo_usuario) references tb_tipos_usuario(id_tipo_usuario),
--- id_atuacao integer,
--- foreign key (id_atuacao) references tb_atuacoes(id_atuacao)
--- );
+create table if not exists tb_usuarios(
+id_usuario integer primary key auto_increment not null unique,
+nome varchar(45) not null ,
+email varchar(100) not null unique,
+senha varchar(60) not null,
+id_tipo_usuario integer not null,
+foreign key (id_tipo_usuario) references tb_tipos_usuario(id_tipo_usuario),
+id_atuacao integer not null,
+foreign key (id_atuacao) references tb_atuacoes(id_atuacao)
+);
 
 -- create table if not exists tb_andares(
 -- id_andar integer primary key auto_increment not null unique,
 -- nome varchar(45) not null unique
 -- );
 
--- create table if not exists tb_salas(
--- id_sala integer primary key auto_increment not null unique,
--- nome varchar(45) not null unique,
--- id_andar integer,
--- foreign key (id_andar) references tb_andares(id_andar)
--- );
+create table if not exists tb_salas(
+id_sala integer primary key auto_increment not null unique,
+nome varchar(45) not null unique,
+id_andar integer not null,
+foreign key (id_andar) references tb_andares(id_andar)
+);
 
 
--- create table if not exists tb_atendimentos(
--- id_atendimento integer primary key auto_increment not null unique,
--- nome varchar(45) not null,
--- data_ativo date not null,
--- max_pacientes integer not null,
--- id_usuario integer,
--- foreign key (id_usuario) references tb_usuarios(id_usuario),
--- id_sala integer,
--- foreign key (id_sala) references tb_salas(id_sala)
--- );
+create table if not exists tb_atendimentos(
+id_atendimento integer primary key auto_increment not null unique,
+nome varchar(45) not null,
+data_ativo date not null,
+max_pacientes integer not null,
+id_usuario integer not null,
+foreign key (id_usuario) references tb_usuarios(id_usuario),
+id_sala integer not null,
+foreign key (id_sala) references tb_salas(id_sala)
+);
 
--- create table if not exists tb_consultas(
--- id_consulta integer primary key auto_increment not null unique,
--- slot integer not null,
--- id_atendimento integer,
--- foreign key (id_atendimento) references tb_atendimentos(id_atendimento)
--- );
+create table if not exists tb_consultas(
+id_consulta integer primary key auto_increment not null unique,
+slot integer not null,
+id_atendimento integer not null,
+foreign key (id_atendimento) references tb_atendimentos(id_atendimento)
+);
 
 -- create table if not exists tb_convenios(
 -- id_convenio integer primary key auto_increment not null unique,
@@ -64,15 +64,15 @@
 -- );
 
 
--- create table if not exists tb_pacientes(
--- id_paciente integer primary key auto_increment not null unique,
--- nome varchar(45) not null,
--- email varchar(100) not null unique,
--- data_nascimento date not null,
--- id_consulta integer,
--- foreign key (id_consulta) references tb_consultas(id_consulta),
--- id_convenio integer,
--- foreign key (id_convenio) references tb_convenios(id_convenio)
+create table if not exists tb_pacientes(
+id_paciente integer primary key auto_increment not null unique,
+nome varchar(45) not null,
+email varchar(100) not null unique,
+data_nascimento date not null,
+id_consulta integer not null,
+foreign key (id_consulta) references tb_consultas(id_consulta),
+id_convenio integer not null,
+foreign key (id_convenio) references tb_convenios(id_convenio)
 
 -- );
 

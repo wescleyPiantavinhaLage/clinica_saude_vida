@@ -23,6 +23,7 @@ function carregarBarraLaeral(){
                 <div id="linksAdmin">
                     <ul>
                         <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/usuario">Usuario</a></li>
                         
                     </ul>
                 </div>
@@ -56,6 +57,8 @@ function verificarUsuario(){
     }else if(usuario.tipo === 2){
         linksMedico.classList.remove('oculto')
     }else if(usuario.tipo === 3){
+        linksRecepcao.classList.remove('oculto')
+        linksMedico.classList.remove('oculto')
         linksAdmin.classList.remove('oculto')
     }
 
