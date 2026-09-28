@@ -17,10 +17,6 @@ app.get('/consulta', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'vi
 app.get('/atendimento', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'view' , 'atendimento.html')))
 app.get('/dashboard', (req, res) => res.sendFile(path.join(__dirname, 'src' , 'view' , 'dashboard.html')))
 
-
-
-
-
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {
